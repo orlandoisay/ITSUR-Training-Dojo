@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using ITSURTrainingDOJO.Web.ActionFilters;
 using ITSURTrainingDOJO.Web.Areas.api.Models;
 using ITSURTrainingDOJO.Web.Areas.api.Repositories;
 using Newtonsoft.Json;
@@ -19,6 +20,7 @@ namespace ITSURTrainingDOJO.Web.Areas.api.Controllers
             this.courseRepository = courseRepository;
         }
 
+        [LoginRequired]
         [HttpGet]
         public JsonResult Get(int id = 5)
         {
